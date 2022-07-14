@@ -16,10 +16,6 @@
                             <a href="tel:0852-9703-6088"
                                 class="text-decoration-none fw-bold link-light">0852-9703-6088</a> :
                             ME Consultant</span>
-                        <span class="d-block fs-6">
-                            <a href="tel:0821-6522-5686"
-                                class="text-decoration-none fw-bold link-light">0821-6522-5686</a> :
-                            Marketing</span>
                     </div>
                     <div class="col-lg-3 mb-5">
                         <span class="d-block fw-bold mb-3 fs-6">Useful Links</span>

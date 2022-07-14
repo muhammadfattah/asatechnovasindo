@@ -46,6 +46,8 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/admin/produk/{id}', [AdminController::class, 'product_edit']);
     Route::put('/admin/produk/{id}', [AdminController::class, 'product_update']);
     Route::delete('/admin/produk/{id}', [AdminController::class, 'product_delete']);
+
+    Route::post('admin/swap/{table}/{id1}/{id2}', [AdminController::class, 'swap']);
 });
 
 Route::middleware(['guest'])->group(function () {

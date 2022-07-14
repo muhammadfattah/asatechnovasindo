@@ -13,7 +13,7 @@
                 <div class="col-lg-8 mt-3">
                     <div class="bg-dark box-contact text-white p-5">
                         <p class="mb-4 text-justify-important">
-                            Ingin berdiskusi dalam hal pengembangan layanan teknologi informasi & pengembangan software
+                            Ingin berkonsultasi dalam hal pengembangan layanan sistem informasi & pengembangan aplikasi
                             anda, silahkan hubungi kami di :
                         </p>
                         <h1 class="fw-bold text-primary mb-4">CV. ASA TECHNOVASINDO</h1>

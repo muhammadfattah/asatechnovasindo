@@ -34,10 +34,15 @@
     </div>
     <div class="card mb-5">
         <div class="card-body">
+            <form action="/admin/swap/produk" method="POST" class="btn-swap">
+                @csrf
+                <button type="submit" class="btn btn-primary btn-sm mb-4">Tukar Posisi</button>
+            </form>
             <div class="table-responsive">
                 <table class="table table-hover table-bordered pt-4" id="table">
                     <thead>
                         <tr>
+                            <th></th>
                             <th class="text-center">#</th>
                             <th>Aplikasi</th>
                             <th>Deskripsi</th>
@@ -47,7 +52,10 @@
                     </thead>
                     <tbody>
                         @foreach ($products as $product)
-                            <tr>
+                            <tr class="align-middle">
+                                <td class="text-center">
+                                    <input type="checkbox" class="duo-checkbox" value="{{ $product->id }}">
+                                </td>
                                 <th class="text-center">{{ $loop->iteration }}</th>
                                 <td>{{ $product->application_name }}</td>
                                 <td>{{ $product->description }}</td>

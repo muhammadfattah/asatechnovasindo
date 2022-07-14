@@ -200,4 +200,45 @@ class AdminController extends Controller
             'text'  => 'berhasil dihapus'
         ]);
     }
+
+    public function swap($table, $id1, $id2)
+    {
+        if ($table == 'client') {
+            Client::where('id', $id2)->update([
+                'id' => 0
+            ]);
+            Client::where('id', $id1)->update([
+                'id' => $id2
+            ]);
+            Client::where('id', 0)->update([
+                'id' => $id1
+            ]);
+        } else if ($table == "produk") {
+            Product::where('id', $id2)->update([
+                'id' => 0
+            ]);
+            Product::where('id', $id1)->update([
+                'id' => $id2
+            ]);
+            Product::where('id', 0)->update([
+                'id' => $id1
+            ]);
+        } else if ($table == 'portfolio') {
+            Portfolio::where('id', $id2)->update([
+                'id' => 0
+            ]);
+            Portfolio::where('id', $id1)->update([
+                'id' => $id2
+            ]);
+            Portfolio::where('id', 0)->update([
+                'id' => $id1
+            ]);
+        }
+
+        return redirect()->to("/admin/$table")->with('message', [
+            'icon'  => 'success',
+            'title' => 'Data',
+            'text'  => 'berhasil ditukar'
+        ]);
+    }
 }

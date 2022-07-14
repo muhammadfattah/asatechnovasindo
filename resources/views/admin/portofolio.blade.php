@@ -29,10 +29,15 @@
     </div>
     <div class="card mb-5">
         <div class="card-body">
+            <form action="/admin/swap/portfolio" method="POST" class="btn-swap">
+                @csrf
+                <button type="submit" class="btn btn-primary btn-sm mb-4">Tukar Posisi</button>
+            </form>
             <div class="table-responsive">
                 <table class="table table-hover table-bordered pt-4" id="table">
                     <thead>
                         <tr>
+                            <th></th>
                             <th class="text-center">#</th>
                             <th>Aplikasi</th>
                             <th class="text-center">Gambar</th>
@@ -41,7 +46,10 @@
                     </thead>
                     <tbody>
                         @foreach ($portfolio as $port)
-                            <tr>
+                            <tr class="align-middle">
+                                <td class="text-center">
+                                    <input type="checkbox" class="duo-checkbox" value="{{ $port->id }}">
+                                </td>
                                 <th class="text-center">{{ $loop->iteration }}</th>
                                 <td>{{ $port->application_name }}</td>
                                 <td class="text-center"><img src="{{ asset('storage' . $port->filename) }}"

@@ -35,4 +35,21 @@ $(document).ready(function () {
     }
 
     $('#table').DataTable();
+
+    let limit = 2;
+    $('input.duo-checkbox').on('change', function (evt) {
+        if ($('input.duo-checkbox:checked').length >= limit + 1) {
+            this.checked = false
+        }
+    });
+
+    const btnSwp = document.querySelector('.btn-swap');
+    btnSwp.addEventListener('submit', function (e) {
+        e.preventDefault();
+        let checkbox = $('input.duo-checkbox:checked');
+        if (checkbox.length == limit) {
+            this.action = this.action + '/' + checkbox[0].value + '/' + checkbox[1].value;
+            this.submit();
+        }
+    });
 });
