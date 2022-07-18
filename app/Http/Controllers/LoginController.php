@@ -19,41 +19,53 @@ class LoginController extends Controller
     }
     public function login()
     {
-        $credentials = request()->validate([
-            'password' => 'required',
-        ]);
+        $credentials = request()->validate(
+            [
+                'username' => 'required',
+                'password' => 'required',
+            ],
+            [
+                'required' => ':attribute harus diisi',
+            ],
+        );
 
-        $credentials['username'] = 'admin';
+        $credentials['username'] = strtolower($credentials['username']);
 
         if (Auth::attempt($credentials)) {
-            return redirect()->intended('/admin/produk');
+            return redirect()->intended('/admin/slider');
         } else {
             return back()->with('message', [
                 'icon'  => 'error',
-                'title' => 'Password',
-                'text'  => 'salah'
+                'title' => 'Username atau Password',
+                'text'  => 'Salah'
             ]);
         }
     }
 
-    public function ganti_password()
+    public function profile()
     {
-        return view('auth.ganti-password');
+        return view('auth.profile');
     }
 
-    public function update_password()
+    public function update_profile()
     {
         $validatedData = request()->validate([
-            'password'              => 'required|confirmed',
-            'password_confirmation' => 'required|same:password',
+            'fullname' => 'required',
+            'username' => 'required|unique:users,username,' . auth()->user()->id,
         ]);
+        if (request()->filled('password')) {
+            $validatedData = request()->validate([
+                'password'              => 'required|confirmed',
+                'password_confirmation' => 'required|same:password',
+            ]);
+            $validatedData['password'] = Hash::make($validatedData['password']);
+        }
+        $validatedData['username'] = strtolower($validatedData['username']);
         $oldUser = User::find(auth()->user()->id);
-        $oldUser->update([
-            'password' => Hash::make($validatedData['password'])
-        ]);
-        return redirect()->to('/ganti-password')->with('message', [
+        $oldUser->update($validatedData);
+        return redirect()->to('/profil')->with('message', [
             'icon'  => 'success',
-            'title' => 'Password',
+            'title' => 'Profile',
             'text'  => 'berhasil diubah'
         ]);
     }
@@ -61,6 +73,6 @@ class LoginController extends Controller
     public function logout()
     {
         Auth::logout();
-        return redirect('/');
+        return redirect('/login');
     }
 }

@@ -11514,6 +11514,7 @@ header.masthead h1, header.masthead .h1 {
 }
 
 .carousel-caption{
+    padding-top:100px;
     height: 100%;
     z-index: 999;
 }

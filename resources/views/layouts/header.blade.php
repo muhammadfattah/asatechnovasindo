@@ -23,7 +23,7 @@
 
 <body>
     <!-- Navigation-->
-    <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainNav">
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3 navbar-shrink" id="mainNav">
         <div class="container px-4 px-lg-5">
             <a class="navbar-brand" href="/">
                 <img src="/assets/img/logoasatech.png" height="60px">
@@ -32,15 +32,16 @@
                 data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
                 aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
             <div class="collapse navbar-collapse" id="navbarResponsive">
-                <ul class="navbar-nav ms-auto my-2 my-lg-0 text-center">
+                <ul
+                    class="navbar-nav ms-auto my-2 my-lg-0 text-center d-lg-flex d-block align-items-center justify-content-center">
                     @php
                     @endphp
                     @foreach ($routes as $key => $value)
                         <li class="nav-item"><a class="nav-link @if (request()->is($value)) active @endif"
                                 href="{{ $value }}">{{ $key }}</a></li>
                     @endforeach
-                    <li class="nav-item ms-0 ms-lg-3"><a class="btn btn-outline-light"
-                            href="/assets/catalog/E-CATALOG.pdf">E-Catalog</a></li>
+                    <li class="nav-item ms-0 ms-lg-3 mt-1"><a class="btn btn-outline-light"
+                            href="{{ asset('storage' . $catalog->filename) }}" target="_blank">E-Catalog</a></li>
                 </ul>
             </div>
         </div>

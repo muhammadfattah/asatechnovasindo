@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 14, 2022 at 05:03 AM
+-- Generation Time: Jul 18, 2022 at 06:35 AM
 -- Server version: 10.4.18-MariaDB
 -- PHP Version: 7.3.27
 
@@ -24,6 +24,26 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `catalogs`
+--
+
+CREATE TABLE `catalogs` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `filename` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `catalogs`
+--
+
+INSERT INTO `catalogs` (`id`, `filename`, `created_at`, `updated_at`) VALUES
+(3, '/assets/catalog/E-Catalog.pdf', '2022-07-14 16:55:49', '2022-07-17 21:32:24');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `clients`
 --
 
@@ -39,9 +59,9 @@ CREATE TABLE `clients` (
 --
 
 INSERT INTO `clients` (`id`, `filename`, `created_at`, `updated_at`) VALUES
-(1, '/assets/img/clients/iosfil7KCcLfQSRNOPzjhsMbDNvV2kNI6TXBM38x.png', '2022-07-13 17:03:46', '2022-07-13 19:44:58'),
-(2, '/assets/img/clients/5eWytOI21t68uZy06Vf9jpcOj37kMMbDSlsy0rNI.png', '2022-07-13 17:03:54', '2022-07-13 19:44:58'),
-(3, '/assets/img/clients/2JKGaVEfUWJYndDEcvgvoGI6KDrgL9gVkeVXJFIY.png', '2022-07-13 17:04:03', '2022-07-13 17:04:03'),
+(1, '/assets/img/clients/iosfil7KCcLfQSRNOPzjhsMbDNvV2kNI6TXBM38x.png', '2022-07-13 17:03:46', '2022-07-13 21:23:21'),
+(2, '/assets/img/clients/5eWytOI21t68uZy06Vf9jpcOj37kMMbDSlsy0rNI.png', '2022-07-13 17:03:54', '2022-07-13 21:23:08'),
+(3, '/assets/img/clients/2JKGaVEfUWJYndDEcvgvoGI6KDrgL9gVkeVXJFIY.png', '2022-07-13 17:04:03', '2022-07-13 21:23:21'),
 (4, '/assets/img/clients/vX4Kkai5AdTDY57L5oN9i3aB6IWFXz7aG6RQib5u.png', '2022-07-13 17:04:13', '2022-07-13 17:04:13'),
 (5, '/assets/img/clients/rIElhU59AH00c66e9CbXKwqCevDdj8BAFZHDrbMR.png', '2022-07-13 17:15:24', '2022-07-13 17:15:24'),
 (6, '/assets/img/clients/7btZPgd8pKN4hmVFXRuk05A4E4iWtppHFUjobl19.png', '2022-07-13 17:15:24', '2022-07-13 17:15:24'),
@@ -64,6 +84,31 @@ INSERT INTO `clients` (`id`, `filename`, `created_at`, `updated_at`) VALUES
 (23, '/assets/img/clients/vKGbCXv20x6sSkWWkJNwvzjDSLbabbx3IbvtRMTH.png', '2022-07-13 17:20:38', '2022-07-13 17:20:38'),
 (24, '/assets/img/clients/6nkRtmMn0bUULWkTDij7JLl69N8SDTqPUdIik73y.png', '2022-07-13 17:20:38', '2022-07-13 17:20:38'),
 (25, '/assets/img/clients/TfgPImm2ClE0pHRGAxLLPqmc23jNjWl7RGRoKGeP.png', '2022-07-13 17:20:38', '2022-07-13 17:20:38');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `contacts`
+--
+
+CREATE TABLE `contacts` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `phone` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `address` varchar(500) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `website` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `maps` varchar(1000) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `street_maps` varchar(1000) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `contacts`
+--
+
+INSERT INTO `contacts` (`id`, `phone`, `address`, `email`, `website`, `maps`, `street_maps`, `created_at`, `updated_at`) VALUES
+(1, '0852-6695-5852', 'Jl. Gagak Hitam (Ringroad) No. 11-12, Kota Medan, Sumatera Utara - Indonesia. 20122.', 'asatechnovasindo@gmail.com', 'www.asatechnovasindo.com', 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3982.042202466971!2d98.62471281744385!3d3.5777751999999956!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30312faa37c49e35%3A0x89d51e34a9362f7a!2sASA%20TECH!5e0!3m2!1sid!2sid!4v1657690015784!5m2!1sid!2sid', 'https://www.google.com/maps/embed?pb=!4v1657689647071!6m8!1m7!1sY_h5-HZ416wlf3Mk-_gKsQ!2m2!1d3.577732391111335!2d98.62650194995372!3f83.4742!4f0!5f0.7820865974627469', NULL, '2022-07-14 10:12:05');
 
 -- --------------------------------------------------------
 
@@ -104,7 +149,38 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (4, '2019_12_14_000001_create_personal_access_tokens_table', 1),
 (5, '2022_07_12_051638_create_clients_table', 1),
 (6, '2022_07_12_071731_create_portfolios_table', 2),
-(7, '2022_07_13_070012_create_products_table', 3);
+(7, '2022_07_13_070012_create_products_table', 3),
+(8, '2022_07_14_132901_create_sliders_table', 4),
+(9, '2022_07_14_135400_create_slider_images_table', 4),
+(10, '2022_07_14_143451_create_services_table', 5),
+(11, '2022_07_14_153521_create_contacts_table', 6),
+(12, '2022_07_14_154526_create_team_contacts_table', 6),
+(13, '2022_07_14_231243_create_catalogs_table', 7),
+(14, '2022_07_15_065151_create_profiles_table', 8),
+(15, '2022_07_15_074201_create_visions_table', 9),
+(16, '2022_07_15_074210_create_missions_table', 9);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `missions`
+--
+
+CREATE TABLE `missions` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `mission` varchar(5000) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `missions`
+--
+
+INSERT INTO `missions` (`id`, `mission`, `created_at`, `updated_at`) VALUES
+(1, 'Menciptakan Produk dengan inovasi dan konsep kreatif berbasis Teknologi', '2022-07-15 01:38:22', '2022-07-15 01:39:53'),
+(2, 'Menyediakan Produk dan Jasa yang terbaik untuk para konsumen', '2022-07-15 01:38:10', '2022-07-15 01:39:53'),
+(3, 'Berperan sebagai inspirator. kreator, inovator, dan konsultan dalam bidang teknologi', '2022-07-15 01:38:42', '2022-07-15 01:38:42');
 
 -- --------------------------------------------------------
 
@@ -155,8 +231,8 @@ CREATE TABLE `portfolios` (
 --
 
 INSERT INTO `portfolios` (`id`, `application_name`, `filename`, `created_at`, `updated_at`) VALUES
-(1, 'Booking System', '/assets/img/portofolio/OuLWPLjLg6NfEWW4zn2MJoxbHKkHoXb9UwiYeDAd.jpg', '2022-07-13 16:51:16', '2022-07-13 16:51:16'),
-(2, 'Presensi Online', '/assets/img/portofolio/dHJmMk15yuUu0Lb1sVQlBjl6FxdmcPdgnlLkzx2Q.jpg', '2022-07-13 16:51:33', '2022-07-13 16:51:33'),
+(1, 'Booking System', '/assets/img/portofolio/OuLWPLjLg6NfEWW4zn2MJoxbHKkHoXb9UwiYeDAd.jpg', '2022-07-13 16:51:16', '2022-07-13 21:25:12'),
+(2, 'Presensi Online', '/assets/img/portofolio/dHJmMk15yuUu0Lb1sVQlBjl6FxdmcPdgnlLkzx2Q.jpg', '2022-07-13 16:51:33', '2022-07-13 21:25:12'),
 (3, 'Management Security', '/assets/img/portofolio/GFK8wfSGX3AvKxr17U41DYilRcWqVwVkvwWYMnBZ.jpg', '2022-07-13 16:51:47', '2022-07-13 16:51:47'),
 (4, 'Sistem Penyandaran Kapal', '/assets/img/portofolio/PSFc1Pop0ni6uXqxJe6ekIUQG0FUKpp1mKkrxOwm.jpg', '2022-07-13 16:52:13', '2022-07-13 16:52:13'),
 (5, 'Depo Part Informations', '/assets/img/portofolio/rwOGA6Naic4zWfU1XHgjs71jkAlpdhMYD5Ch91zB.jpg', '2022-07-13 16:52:26', '2022-07-13 16:52:26'),
@@ -203,8 +279,8 @@ CREATE TABLE `products` (
 --
 
 INSERT INTO `products` (`id`, `application_name`, `description`, `filename`, `created_at`, `updated_at`) VALUES
-(1, 'Real-Time Monitoring System', 'Real Time Monitoring System Menampilkan semua pusat data Anda dan pantau semua Key Performance Indicator (KPI). Lacak kapasitas di beberapa lokasi secara Real-Time untuk mendapatkan gambaran akurat tentang data dan pengaturan kinerja Tim dan Perusahaan Anda.', '/assets/img/product/AYkKFQdEVl1xCiAe88zIkHvCDwC49OtQhP8soncT.png', '2022-07-13 16:39:49', '2022-07-13 16:39:49'),
-(2, 'Sistem Informasi Manajemen Rumah Sakit (SIMRS)', 'Sistem Informasi Management Rumah Sakit membantu manajemen rumah sakit dalam menyediakan berbagai bahan pengambilan keputusan (eviden based), mempermudah proses pengklaiman pasien asuransi, memperlancar konektivitas rumah sakit dengan pihak asuransi (BPJS) dalam kegiatan klaim pelayanan, serta mempermudah rumah sakit dalam melakukan perhitungan insentif/ remunerasi bagi seluruh karyawan terutama dokter atau insan medis.', '/assets/img/product/GCIgowGRC3xdrPt2HXvsjYvLkvhRJfdJhIr0vgVm.png', '2022-07-13 16:40:41', '2022-07-13 16:40:41'),
+(1, 'Real-Time Monitoring System', 'Real Time Monitoring System Menampilkan semua pusat data Anda dan pantau semua Key Performance Indicator (KPI). Lacak kapasitas di beberapa lokasi secara Real-Time untuk mendapatkan gambaran akurat tentang data dan pengaturan kinerja Tim dan Perusahaan Anda.', '/assets/img/product/AYkKFQdEVl1xCiAe88zIkHvCDwC49OtQhP8soncT.png', '2022-07-13 16:39:49', '2022-07-14 01:45:18'),
+(2, 'Sistem Informasi Manajemen Rumah Sakit (SIMRS)', 'Sistem Informasi Management Rumah Sakit membantu manajemen rumah sakit dalam menyediakan berbagai bahan pengambilan keputusan (eviden based), mempermudah proses pengklaiman pasien asuransi, memperlancar konektivitas rumah sakit dengan pihak asuransi (BPJS) dalam kegiatan klaim pelayanan, serta mempermudah rumah sakit dalam melakukan perhitungan insentif/ remunerasi bagi seluruh karyawan terutama dokter atau insan medis.', '/assets/img/product/GCIgowGRC3xdrPt2HXvsjYvLkvhRJfdJhIr0vgVm.png', '2022-07-13 16:40:41', '2022-07-14 01:45:18'),
 (3, 'Sistem Informasi Manajemen Puskesmas (SIMPUS)', 'Sistem Informasi Manajemen Puskesmas membantu manajemen Puskesmas dalam menyediakan berbagai bahan pengambilan keputusan (eviden based), mempermudah proses pengklaiman pasien asuransi, memperlancar konektivitas Puskesmas dengan pihak asuransi (BPJS) dalam kegiatan klaim pelayanan, serta mempermudah Puskesmas dalam melakukan perhitungan insentif/ remunerasi bagi seluruh karyawan terutama dokter atau insan medis.', '/assets/img/product/6sT05iuEaL97VQtdyORNV2BTY6lfcQoh6LbA8XUv.png', '2022-07-13 16:42:31', '2022-07-13 16:42:31'),
 (4, 'Virtual City', 'Satu Aplikasi Untuk Semua Layanan pada suatu Kota sehingga memudahkan bagi setiap penggunannya untuk mendapatkan Informasi mengenai layanan apa saja yang dibutuhkan.', '/assets/img/product/wko6Fw0xpRlp54BkIgMviHB0ydJEHRQMElkkbFvj.png', '2022-07-13 16:43:05', '2022-07-13 16:43:05'),
 (5, 'Virtual Management System', 'Sistem Aplikasi Virtual Multifungsi untuk segala kebutuhan dengan menghadirkan tampilan Gambar dan Video Panorama 360 derajat. Sistem ini banyak dipergunakan untuk kebutuhan bisnis seperti Pariwisata, Promosi, sales/marketing, bazaar, Expo, meeting, event organizer, advertising, virtual tour dan lain sebagainya.', '/assets/img/product/ohCvM4VU0VNorSP6V64dEuHSiEzvd5R5HWjCCna4.png', '2022-07-13 16:44:04', '2022-07-13 16:44:04'),
@@ -218,13 +294,131 @@ INSERT INTO `products` (`id`, `application_name`, `description`, `filename`, `cr
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `profiles`
+--
+
+CREATE TABLE `profiles` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `section_1` varchar(5000) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `section_2` varchar(5000) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `section_1_image` varchar(500) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `section_2_image` varchar(500) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `profiles`
+--
+
+INSERT INTO `profiles` (`id`, `section_1`, `section_2`, `section_1_image`, `section_2_image`, `created_at`, `updated_at`) VALUES
+(1, 'CV. ASA TECHNOVASINDO adalah Perusahaan yang bergerak dibidang Teknologi Informasi yang berfokus pada Pengembangan Sofware dan Hardware, Penyedia barang dan Jasa Multimedia serta sistem komputerisasi berbasis teknologi untuk mendukung kemajuan perkembangan teknologi global saat ini dan masa mendatang.\r\n\r\nCV. ASA TECHNOVASINDO sumber daya manusia profesional dan berpengalaman dibidangnya sehingga kami dapat memberikan pelayanan terbaik untuk menjamin kepuasaan para konsumen kami.', 'Kami memiliki moto “Berkarya Untuk Bangsa Dan Menjadi Generasi Mandiri” dengan menghadirkan Produk dan Jasa yang bermutu serta berkualitas terbaik bagi semua konsumen kami.\r\n\r\nSeiring perkembangan zaman dan sesuai visi & misi perusahaan CV. ASA TECHNOVASINDO, maka kami akan terus menerus melakukan inovasi demi menjadi perusahaan yang lebih berkompeten demi terwujudnya cita-cita bersama.', '/assets/img/company_profiles/dPfzkKACJvHuMxi7k4zlh1wbl8viNIq2EnBTjnpC.jpg', '/assets/img/company_profiles/onbdG0oh4GW4u4qlMe0UXGBdQA6FHZ87AQPAHPu7.jpg', '2022-07-15 00:06:47', '2022-07-17 20:11:33');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `services`
+--
+
+CREATE TABLE `services` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `title` varchar(1000) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `description` varchar(5000) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `services`
+--
+
+INSERT INTO `services` (`id`, `title`, `description`, `created_at`, `updated_at`) VALUES
+(2, 'IT Consultant', 'Spesialis teknis yang berfokus pada integrasi teknologi informasi ke dalam bisnis dan menunjukkan kepada klien cara menggunakan teknologi TI secara lebih efisien untuk membantu mencapai tujuan.', '2022-07-14 07:51:57', '2022-07-14 07:54:30'),
+(3, 'Apps Development', 'Kami Pengembang Teknologi dalam pembuatan project elektronika Internet of Things (IoT) dengan kontrol sistem kendali untuk semua jenis keperluan Berbasis Internet.', '2022-07-14 07:52:09', '2022-07-14 07:54:30'),
+(4, 'Hardware Interface', 'Peran digital marketing consultant sangat dibutuhkan ketika bisnis Anda mengalami kebuntuan menemukan tujuan serta menyusun strategi sehingga kami hadir memberikan Jasa Layanan ini.', '2022-07-14 07:52:38', '2022-07-14 07:52:38'),
+(5, 'Web Development', 'Spesialis teknis yang berfokus pada integrasi teknologi informasi ke dalam bisnis dan menunjukkan kepada klien cara menggunakan teknologi TI secara lebih efisien untuk membantu mencapai tujuan.', '2022-07-14 07:53:01', '2022-07-14 07:53:01'),
+(6, 'Sistem Integrasi', 'Kami Pengembang Teknologi dalam pembuatan project elektronika Internet of Things (IoT) dengan kontrol sistem kendali untuk semua jenis keperluan Berbasis Internet.', '2022-07-14 07:53:14', '2022-07-14 07:53:14'),
+(7, 'Digital Marketing', 'Peran digital marketing consultant sangat dibutuhkan ketika bisnis Anda mengalami kebuntuan menemukan tujuan serta menyusun strategi sehingga kami hadir memberikan Jasa Layanan ini.', '2022-07-14 07:53:27', '2022-07-14 07:53:27');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `sliders`
+--
+
+CREATE TABLE `sliders` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `title` varchar(1000) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `description` varchar(5000) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `sliders`
+--
+
+INSERT INTO `sliders` (`id`, `title`, `description`, `created_at`, `updated_at`) VALUES
+(1, 'Penuhi Kebutuhan Digitalisasi Usaha Anda', 'Dengan adanya sistem informasi berbasis internet atau digital yang bisa diakses secara online tentunya akan membuat pelayanan publik itu diperbarui menjadi lebih baik lagi, sehingga dengan demikian proses pelayanan publik bisa berjalan dengan lebih cepat', NULL, '2022-07-14 09:52:05');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `slider_images`
+--
+
+CREATE TABLE `slider_images` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `filename` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `slider_images`
+--
+
+INSERT INTO `slider_images` (`id`, `filename`, `created_at`, `updated_at`) VALUES
+(2, '/assets/img/sliders/XK6SVM5dTfgXb5mEDtfjaOMFtF2Cj2GHvWc64MsS.jpg', '2022-07-14 09:38:05', '2022-07-15 08:35:00'),
+(4, '/assets/img/sliders/rfIRPaGN8Y2Y6aAEmj7JAKO5QqxUEUqWH0DKNbt4.jpg', '2022-07-14 07:08:52', '2022-07-15 08:35:00'),
+(5, '/assets/img/sliders/GXAUWYEBll8QDghxglcT9wBlAWwL3fwjO1pDJHIh.jpg', '2022-07-14 07:31:36', '2022-07-14 09:38:22');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `team_contacts`
+--
+
+CREATE TABLE `team_contacts` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `phone` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `position` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `team_contacts`
+--
+
+INSERT INTO `team_contacts` (`id`, `name`, `phone`, `position`, `created_at`, `updated_at`) VALUES
+(2, 'IT Consultant', '0821-6746-7505', 'IT Consultant', '2022-07-14 09:42:29', '2022-07-14 10:08:29'),
+(3, 'Digital Consultant', '0822-7622-5022', 'Digital Consultant', '2022-07-14 10:03:41', '2022-07-14 10:08:37'),
+(4, 'ME Consultant', '0852-9703-6088', 'ME Consultant', '2022-07-14 10:04:02', '2022-07-14 10:08:46');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `users`
 --
 
 CREATE TABLE `users` (
   `id` bigint(20) UNSIGNED NOT NULL,
+  `fullname` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `username` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `password` varchar(500) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `role` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -233,17 +427,51 @@ CREATE TABLE `users` (
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`id`, `username`, `password`, `created_at`, `updated_at`) VALUES
-(2, 'admin', '$2y$10$t2m9rBZ7E85nvygQglUuceKU2MWDhUzu/mgnmBKE5t5iVSTFEZTHW', '2022-07-13 07:49:25', '2022-07-13 16:38:43');
+INSERT INTO `users` (`id`, `fullname`, `username`, `password`, `role`, `created_at`, `updated_at`) VALUES
+(2, 'Muhammad Fattah', 'admin', '$2y$10$KKEGt6TBBcPDY5LQ9DgQuOXpQPwXK3vslwwZaovA7mNiNdSyu8gAO', 'super admin', '2022-07-13 07:49:25', '2022-07-14 20:07:55'),
+(4, 'Muhammad Fattah 2', 'muhammadfattah', '$2y$10$ANT..S0o5OBAlN.dXYjbIOFy7WZFR6Wx.LnQLYUtXs1jHwWG3kn8G', 'admin', '2022-07-14 17:51:34', '2022-07-14 22:31:07');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `visions`
+--
+
+CREATE TABLE `visions` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `vision` varchar(5000) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `visions`
+--
+
+INSERT INTO `visions` (`id`, `vision`, `created_at`, `updated_at`) VALUES
+(1, 'Menjadi Perusahaan terbaik dalam bidangnya dan berkompeten untuk menjadi pilihan utama Konsumen dan Masyarakat luas', '2022-07-15 01:06:22', '2022-07-15 01:22:06'),
+(3, 'Menjadi Perusahaan yang dapat berkarya untuk Bangsa demi terwujudnya Generasi Cerdas dan Mandiri', '2022-07-15 01:35:43', '2022-07-15 01:35:43');
 
 --
 -- Indexes for dumped tables
 --
 
 --
+-- Indexes for table `catalogs`
+--
+ALTER TABLE `catalogs`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `clients`
 --
 ALTER TABLE `clients`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `contacts`
+--
+ALTER TABLE `contacts`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -257,6 +485,12 @@ ALTER TABLE `failed_jobs`
 -- Indexes for table `migrations`
 --
 ALTER TABLE `migrations`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `missions`
+--
+ALTER TABLE `missions`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -286,9 +520,45 @@ ALTER TABLE `products`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `profiles`
+--
+ALTER TABLE `profiles`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `services`
+--
+ALTER TABLE `services`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `sliders`
+--
+ALTER TABLE `sliders`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `slider_images`
+--
+ALTER TABLE `slider_images`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `team_contacts`
+--
+ALTER TABLE `team_contacts`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `users`
 --
 ALTER TABLE `users`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `visions`
+--
+ALTER TABLE `visions`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -296,10 +566,22 @@ ALTER TABLE `users`
 --
 
 --
+-- AUTO_INCREMENT for table `catalogs`
+--
+ALTER TABLE `catalogs`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
 -- AUTO_INCREMENT for table `clients`
 --
 ALTER TABLE `clients`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+
+--
+-- AUTO_INCREMENT for table `contacts`
+--
+ALTER TABLE `contacts`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `failed_jobs`
@@ -311,7 +593,13 @@ ALTER TABLE `failed_jobs`
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+
+--
+-- AUTO_INCREMENT for table `missions`
+--
+ALTER TABLE `missions`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `personal_access_tokens`
@@ -332,10 +620,46 @@ ALTER TABLE `products`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
+-- AUTO_INCREMENT for table `profiles`
+--
+ALTER TABLE `profiles`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `services`
+--
+ALTER TABLE `services`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+
+--
+-- AUTO_INCREMENT for table `sliders`
+--
+ALTER TABLE `sliders`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `slider_images`
+--
+ALTER TABLE `slider_images`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
+-- AUTO_INCREMENT for table `team_contacts`
+--
+ALTER TABLE `team_contacts`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
+-- AUTO_INCREMENT for table `visions`
+--
+ALTER TABLE `visions`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

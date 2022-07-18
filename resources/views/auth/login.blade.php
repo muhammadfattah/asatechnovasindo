@@ -1,34 +1,64 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>ASA TECHNOVASINDO</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+
+    <!-- Google Font: Source Sans Pro -->
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="/plugins/fontawesome-free/css/all.min.css">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="/dist/css/adminlte.min.css">
 </head>
 
-<body>
-    <div class="container d-flex justify-content-center align-items-center" style="height: 100vh">
-        <div class="card p-5" style="box-shadow: 0px 0px 5px gray; width: 450px">
-            <div class="card-body">
-                <h4 class="card-title mb-4 text-center fw-bold text-primary">LOGIN ADMIN</h4>
-                <form action="/login" method="POST" enctype="multipart/form-data">
-                    @csrf
-                    <div class="mb-4">
-                        <label for="password" class="form-label">Password</label>
-                        <input type="password"
-                            class="form-control form-control-sm @error('password') is-invalid @enderror" id="password"
-                            name="password">
-                    </div>
-                    <div class="d-flex justify-content-center">
-                        <button type="submit" class="btn btn-primary">Login</button>
-                    </div>
-                </form>
+<body class="hold-transition login-page">
+    <div class="login-box">
+        <!-- /.login-logo -->
+        <div class="card card-outline card-primary">
+            <div class="card-header text-center py-4">
+                <span class="h3 font-weight-bold text-primary">LOGIN</s>
             </div>
+            <div class="card-body py-4 pb-5">
+                <form action="/login" method="post">
+                    @csrf
+                    <div class="input-group mb-4">
+                        <input type="text" class="form-control  @error('username') is-invalid @enderror"
+                            placeholder="Username" id="username" name="username" value="{{ old('username') }}"
+                            value="{{ old('username') }}">
+                        <div class="input-group-append">
+                            <div class="input-group-text">
+                                <span class="fas fa-user"></span>
+                            </div>
+                        </div>
+                        @error('username')
+                            <div class="mt-2 ml-1 invalid-feedback">{{ ucfirst($message) }}</div>
+                        @enderror
+                    </div>
+                    <div class="input-group mb-4">
+                        <input type="password" class="form-control  @error('password') is-invalid @enderror"
+                            placeholder="Password" id="password" name="password">
+                        <div class="input-group-append">
+                            <div class="input-group-text">
+                                <span class="fas fa-key"></span>
+                            </div>
+                        </div>
+                        @error('password')
+                            <div class="mt-2 ml-1 invalid-feedback">{{ ucfirst($message) }}</div>
+                        @enderror
+                    </div>
+                    <button type="submit" class="btn btn-primary w-100">Login</button>
+                </form>
+
+            </div>
+            <!-- /.card-body -->
         </div>
+        <!-- /.card -->
     </div>
+    <!-- /.login-box -->
     <!-- Sweet Alert Message -->
     @if (session()->has('message'))
         <div class="flashdata" style="display: none;">
@@ -40,12 +70,14 @@
             @endif
         </div>
     @endif
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous">
-    </script>
+    <!-- jQuery -->
+    <script src="/plugins/jquery/jquery.min.js"></script>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
-    <script src="//cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>
+    <!-- Bootstrap 4 -->
+    <script src="/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- AdminLTE App -->
+    <script src="/dist/js/adminlte.min.js"></script>
+
     <script src="/js/script_admin.js"></script>
 </body>
 

@@ -18,13 +18,13 @@ $(document).ready(function () {
                 e.preventDefault();
                 Swal.fire({
                     title: 'Hapus Data',
-                    text: "data yang dihapus akan hilang permanen",
+                    text: "Data yang dihapus akan hilang permanen",
                     icon: 'warning',
                     showCancelButton: true,
                     confirmButtonColor: '#d33',
                     cancelButtonColor: '#000',
-                    confirmButtonText: 'Delete',
-                    cancelButtonText: 'Cancel'
+                    confirmButtonText: 'Hapus',
+                    cancelButtonText: 'Batal'
                 }).then((result) => {
                     if (result.value) {
                         this.submit();
@@ -34,7 +34,21 @@ $(document).ready(function () {
         });
     }
 
-    $('#table').DataTable();
+    $('#table').DataTable({
+        "paging": true,
+        "ordering": true,
+        "info": true,
+        "autoWidth": false,
+        "responsive": true,
+    });
+
+    $('#table2').DataTable({
+        "paging": true,
+        "ordering": true,
+        "info": true,
+        "autoWidth": false,
+        "responsive": true,
+    });
 
     let limit = 2;
     $('input.duo-checkbox').on('change', function (evt) {
@@ -44,12 +58,35 @@ $(document).ready(function () {
     });
 
     const btnSwp = document.querySelector('.btn-swap');
-    btnSwp.addEventListener('submit', function (e) {
-        e.preventDefault();
-        let checkbox = $('input.duo-checkbox:checked');
-        if (checkbox.length == limit) {
-            this.action = this.action + '/' + checkbox[0].value + '/' + checkbox[1].value;
-            this.submit();
-        }
-    });
+    if (btnSwp) {
+        btnSwp.addEventListener('submit', function (e) {
+            e.preventDefault();
+            let checkbox = $('input.duo-checkbox:checked');
+            if (checkbox.length == limit) {
+                this.action = this.action + '/' + checkbox[0].value + '/' + checkbox[1].value;
+                this.submit();
+            }
+        });
+    }
+
+    const btnSwp2 = document.querySelector('.btn-swap2');
+    if (btnSwp2) {
+        btnSwp2.addEventListener('submit', function (e) {
+            e.preventDefault();
+            let checkbox = $('input.duo-checkbox2:checked');
+            if (checkbox.length == limit) {
+                this.action = this.action + '/' + checkbox[0].value + '/' + checkbox[1].value;
+                this.submit();
+            }
+        });
+    }
+
+    const fileInput = document.querySelector('.custom-file-input');
+    if (fileInput) {
+        fileInput.addEventListener('input', function (e) {
+            let fileName = this.files[0].name;
+            let nextSibling = e.target.nextElementSibling
+            nextSibling.innerText = fileName
+        })
+    }
 });

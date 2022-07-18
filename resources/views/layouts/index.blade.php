@@ -2,6 +2,7 @@
 $routes = [
     'Beranda' => '/',
     'Tentang Kami' => 'tentang-kami',
+    'Layanan' => 'layanan',
     'Produk' => 'produk',
     'Porfolio' => 'portfolio',
     'Client' => 'client',

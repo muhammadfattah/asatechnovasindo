@@ -5,39 +5,28 @@
         <div class="container px-4 px-lg-5">
             <div class="row gx-4 gx-lg-4 justify-content-center align-items-sm-start">
                 <div class="mb-5 ms-5">
-                    <h2 class="h3 mt-0 text-uppercase text-primary fw-bold"><i class="bi bi-circle-fill me-2"></i>
+                    <h2 class="h3 mt-0 text-uppercase text-primary fw-bold" data-aos="fade-down"><i
+                            class="bi bi-circle-fill me-2"></i>
                         Profil
                     </h2>
                 </div>
-                <div class="col-lg-6 text-center">
-                    <img src="/assets/img/carousel/image-2.jpg" width="90%" class="about-img mb-5">
+                <div class="col-lg-10 text-center">
+                    <img src="{{ asset('storage' . $profile->section_1_image) }}" width="90%" class="about-img mb-5"
+                        data-aos="fade-up">
                 </div>
-                <div class="col-lg-6">
-                    <p class="mb-4 text-justify-important"><b class="text-primary">CV. ASA TECHNOVASINDO</b> adalah
-                        Perusahaan yang bergerak dibidang Teknologi Informasi yang berfokus pada Pengembangan Sofware
-                        dan Hardware, Penyedia barang dan Jasa Multimedia serta sistem komputerisasi berbasis teknologi
-                        untuk mendukung kemajuan perkembangan teknologi global saat ini dan masa mendatang.
-                    </p>
-                    <p class="mb-4 text-justify-important">
-                        <b class="text-primary">CV. ASA TECHNOVASINDO</b> sumber daya manusia profesional dan
-                        berpengalaman dibidangnya
-                        sehingga kami dapat memberikan pelayanan terbaik untuk menjamin kepuasaan para konsumen kami.
+                <div class="col-lg-12">
+                    <p class="mb-4 text-justify-important" data-aos="fade-down">
+                        {!! nl2br(stripcslashes($profile->section_1)) !!}
                     </p>
                 </div>
-                <div class="col-lg-6">
-                    <p class="mb-4 text-justify-important">
-                        Kami memiliki moto “Berkarya Untuk Bangsa Dan Menjadi Generasi Mandiri” dengan menghadirkan
-                        Produk dan Jasa yang bermutu serta berkualitas terbaik bagi semua konsumen kami.
-                    </p>
-                    <p class="mb-4 text-justify-important">
-                        Seiring perkembangan zaman dan sesuai visi & misi perusahaan <b class="text-primary">CV. ASA
-                            TECHNOVASINDO</b>, maka kami
-                        akan terus menerus melakukan inovasi demi menjadi perusahaan yang lebih berkompeten demi
-                        terwujudnya cita-cita bersama.
+                <div class="col-lg-6 mb-5">
+                    <p class="mb-4 text-justify-important" data-aos="fade-down">
+                        {!! nl2br(stripcslashes($profile->section_2)) !!}
                     </p>
                 </div>
-                <div class="col-lg-6 text-center">
-                    <img src="/assets/img/carousel/image-3.jpg" width="90%" class="about-img mb-5">
+                <div class="col-lg-6 text-center mb-5">
+                    <img src="{{ asset('storage' . $profile->section_2_image) }}" width="90%" class="about-img mb-5"
+                        data-aos="fade-left">
                 </div>
             </div>
         </div>
@@ -47,62 +36,40 @@
         <div class="container px-4 px-lg-5">
             <div class="row gx-4 gx-lg-4 justify-content-around align-items-sm-start">
                 <div class="mb-4">
-                    <h2 class="h3 mt-0 text-uppercase text-white fw-bold"><i class="bi bi-circle-fill me-2"></i>
+                    <h2 class="h3 mt-0 text-uppercase text-white fw-bold" data-aos="fade-down"><i
+                            class="bi bi-circle-fill me-2"></i>
                         Visi Misi
                     </h2>
                 </div>
                 <div class="col-lg-5 mb-4">
-                    <h4 class="mt-0 text-uppercase text-white fw-bold">
+                    <h4 class="mt-0 text-uppercase text-white fw-bold" data-aos="fade-left">
                         Visi
-                        </h3>
-                        <div class="d-flex text-white">
+                    </h4>
+                    @foreach ($visions as $vision)
+                        <div class="d-flex text-white" data-aos="fade-left" data-aos-delay="{{ $loop->iteration * 300 }}">
                             <i class="bi bi-check-circle me-3 fs-5"></i>
                             <div>
                                 <p class="text-justify-important text-white">
-                                    Menjadi Perusahaan terbaik dalam bidangnya dan berkompeten untuk menjadi pilihan utama
-                                    Konsumen
-                                    dan Masyarakat luas
+                                    {{ $vision->vision }}
                                 </p>
                             </div>
                         </div>
-                        <div class="d-flex text-white">
-                            <i class="bi bi-check-circle me-3 fs-5"></i>
-                            <div>
-                                <p class="text-justify-important text-white">
-                                    Menjadi Perusahaan yang dapat berkarya untuk Bangsa demi terwujudnya Generasi Cerdas dan
-                                    Mandiri
-                                </p>
-                            </div>
-                        </div>
+                    @endforeach
                 </div>
                 <div class="col-lg-5 mb-4">
-                    <h4 class="mt-0 text-uppercase text-white fw-bold">
+                    <h4 class="mt-0 text-uppercase text-white fw-bold" data-aos="fade-left">
                         Misi
-                        </h3>
-                        <div class="d-flex text-white">
+                    </h4>
+                    @foreach ($missions as $mission)
+                        <div class="d-flex text-white" data-aos="fade-left" data-aos-delay="{{ $loop->iteration * 300 }}">
                             <i class="bi bi-check-circle me-3 fs-5"></i>
                             <div>
                                 <p class="text-justify-important text-white">
-                                    Menciptakan Produk dengan inovasi dan konsep kreatif berbasis Teknologi
+                                    {{ $mission->mission }}
                                 </p>
                             </div>
                         </div>
-                        <div class="d-flex text-white">
-                            <i class="bi bi-check-circle me-3 fs-5"></i>
-                            <div>
-                                <p class="text-justify-important text-white">
-                                    Menyediakan Produk dan Jasa yang terbaik untuk para konsumen
-                                </p>
-                            </div>
-                        </div>
-                        <div class="d-flex text-white">
-                            <i class="bi bi-check-circle me-3 fs-5"></i>
-                            <div>
-                                <p class="text-justify-important text-white">
-                                    Berperan sebagai inspirator. kreator, inovator, dan konsultan dalam bidang teknologi
-                                </p>
-                            </div>
-                        </div>
+                    @endforeach
                 </div>
             </div>
         </div>
