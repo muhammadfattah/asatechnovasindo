@@ -19,6 +19,9 @@
     <link rel="stylesheet" href="/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
     <link rel="stylesheet" href="/plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
 
+    {{-- Summernote --}}
+    <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.css" rel="stylesheet">
+
     <!-- Theme style -->
     <link rel="stylesheet" href="/dist/css/adminlte.css">
 </head>
@@ -66,7 +69,7 @@
                 </div>
 
                 <!-- Sidebar Menu -->
-                <nav class="mt-2">
+                <nav>
                     <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu"
                         data-accordion="false">
                         <li class="nav-header text-uppercase">Manajemen Akun</li>
@@ -90,6 +93,13 @@
                         @endforeach
                         <li class="nav-header text-uppercase">Manajemen Website</li>
                         @foreach ($routes as $key => $value)
+                            @if (isset($value[2]))
+                                @php
+                                    if ($value[2] != auth()->user()->role) {
+                                        continue;
+                                    }
+                                @endphp
+                            @endif
                             <li class="nav-item">
                                 <a href="{{ $value[0] }}"
                                     class="nav-link @if (request()->is(substr($value[0], 1)) || request()->is(substr($value[0], 1) . '/*')) active @endif">

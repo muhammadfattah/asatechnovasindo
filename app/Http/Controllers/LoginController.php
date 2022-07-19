@@ -32,7 +32,11 @@ class LoginController extends Controller
         $credentials['username'] = strtolower($credentials['username']);
 
         if (Auth::attempt($credentials)) {
-            return redirect()->intended('/admin/slider');
+            if (auth()->user()->role == 'super admin') {
+                return redirect()->intended('/admin/slider');
+            } else {
+                return redirect()->intended('/admin/artikel');
+            }
         } else {
             return back()->with('message', [
                 'icon'  => 'error',

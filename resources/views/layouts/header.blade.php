@@ -24,7 +24,7 @@
 <body>
     <!-- Navigation-->
     <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3 navbar-shrink" id="mainNav">
-        <div class="container px-4 px-lg-5">
+        <div class="container-fluid px-4 px-lg-5">
             <a class="navbar-brand" href="/">
                 <img src="/assets/img/logoasatech.png" height="60px">
             </a>
@@ -37,7 +37,7 @@
                     @php
                     @endphp
                     @foreach ($routes as $key => $value)
-                        <li class="nav-item"><a class="nav-link @if (request()->is($value)) active @endif"
+                        <li class="nav-item"><a class="nav-link @if (request()->is($value) || request()->is($value . '/*')) active @endif"
                                 href="{{ $value }}">{{ $key }}</a></li>
                     @endforeach
                     <li class="nav-item ms-0 ms-lg-3 mt-1"><a class="btn btn-outline-light"

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 18, 2022 at 06:35 AM
+-- Generation Time: Jul 19, 2022 at 06:57 AM
 -- Server version: 10.4.18-MariaDB
 -- PHP Version: 7.3.27
 
@@ -20,6 +20,45 @@ SET time_zone = "+00:00";
 --
 -- Database: `asatechnovasindo`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `articles`
+--
+
+CREATE TABLE `articles` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `user_id` bigint(20) UNSIGNED NOT NULL,
+  `title` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `slug` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `thumbnail` varchar(500) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `quote` varchar(2000) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `content` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `articles`
+--
+
+INSERT INTO `articles` (`id`, `user_id`, `title`, `slug`, `thumbnail`, `quote`, `content`, `created_at`, `updated_at`) VALUES
+(7, 2, 'Pentingnya Sistem Informasi Dalam Sebuah Organisasi', 'pentingnya-sistem-informasi-dalam-sebuah-organisasi', '/assets/img/article/NhYjABdxKjaOmHWRTOnFsgGrbFCpPNXk9MSbzosm.png', 'Anda tentunya sudah tidak asing lagi dengan kalimat Sistem Informasi bukan? Sistem informasi ini merupakan kumpulan dari komponen yang saling bekerjasama mengelola informasi dalam bentuk data sehingga dapat diproses menjadi lebih mudah untuk berbagai kemudahan dalam sebuah organisasi. Dengan adanya pengelolaan data yang berbasis digital ini memungkinkan segala keputusan juga bisa dibuat dengan lebih mudah sehingga dengan demikian tentunya memudahkan setiap orang dalam bekerja.', '<p style=\"text-align: justify; \">Anda tentunya sudah tidak asing lagi dengan kalimat Sistem Informasi bukan? Sistem informasi ini merupakan kumpulan dari komponen yang saling bekerjasama mengelola informasi dalam bentuk data sehingga dapat diproses menjadi lebih mudah untuk berbagai kemudahan dalam sebuah organisasi. Dengan adanya pengelolaan data yang berbasis digital ini memungkinkan segala keputusan juga bisa dibuat dengan lebih mudah sehingga dengan demikian tentunya memudahkan setiap orang dalam bekerja.</p><p style=\"text-align: justify;\"><br></p><blockquote class=\"blockquote\"><p style=\"text-align: justify;\">\"Beralih kesistem Digital Sekarang Juga Atau Anda Akan Tertinggal\"</p></blockquote><p style=\"text-align: justify; \"><br></p><h4 style=\"text-align: justify;\"><b>HEMAT BIAYA</b></h4><p style=\"text-align: justify;\"><span style=\"font-size: 1rem;\">Bagaimana bisa menggunakan system informasi dikatakan hemat biaya? Memang pada awalnya Anda akan membutuhkan biaya saat pertama kali hendak menggunakan system informasi yang baru, namun jika dipikirkan kembali, sebenarnya semua biaya yang Anda keluarkan di awal penggunaannya itu tidak seberapa jika dibandingkan dengan biaya yang perlu Anda keluarkan saat Anda belum menggunakan system informasi digital. Saat semua data dikelola secara manual maka Anda harus mengeluarkan biaya tenaga kerja yang akan mengelolanya, belum lagi alat tulis kantor (ATK) seperti kertas dan tinta yang harus dikeluarkan. Namun dengan system informasi digital berupa aplikasi atau software yang digunakan maka Anda bisa lebih hemat dan memangkas semua kebutuhan biaya tersebut dalam jangka waktu yang panjang.</span></p><p style=\"text-align: justify;\"><span style=\"font-size: 1rem;\"><br></span></p><h4 style=\"text-align: justify;\"><b>LAYANAN SEMAKIN BERKUALITAS</b></h4><p style=\"text-align: justify;\">Sistem informasi ini juga sering kali dikaitkan sebagai solusi dari permasalahan layanan publik. Sering kali banyak masyarakat yang mengeluh karena layanan yang diberikan oleh sebuah instansi publik tidak cukup baik sehingga dengan demikian menyusahkan masyarakat. Dengan adanya system informasi berbasis internet atau digital yang bisa diakses secara online tentunya akan membuat pelayanan publik itu diperbarui menjadi lebih baik lagi, sehingga dengan demikian proses pelayanan publik bisa berjalan dengan lebih cepat.</p><p style=\"text-align: justify;\"><br></p><h4 style=\"text-align: justify;\"><b>DAYA SAING LEBIH BAIK</b></h4><p style=\"text-align: justify;\">Dengan adanya system informasi yang baik di dalam sebuah organisasi maka tentunya bisa menambah nilai atau daya saing sebuah organisasi menjadi lebih baik, karena dengan adanya system informasi yang digunakan itu maka kualitas layanan yang bertambah baik serta proses pengambilan keputusan yang lebih cepat menjadi keunggulan utama yang membuat organisasi Anda menjadi lebih terdepan dibandingkan dengan yang lainnya.</p><p style=\"text-align: justify;\"><br></p><h4 style=\"text-align: justify;\"><b>PENYIMPANAN DATA LEBIH AKURAT</b></h4><p style=\"text-align: justify;\">Untuk tujuan keuangan dan pemecahan masalah maka tentunya sebuah organisasi membutuhkan data yang akurat. Dengan adanya system informasi ini maka data-data dari waktu yang lama pun tentunya akan tersimpan dan terekam dengan baik sehingga dapat dicari lagi di kemudian hari untuk berbagai kebutuhan. Proses pencarian data yang cepat ini tentunya sangat menghemat waktu dan membantu organisasi dalam mengelola semua informasi.</p>', '2022-07-19 03:04:27', '2022-07-19 04:51:09');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `article_images`
+--
+
+CREATE TABLE `article_images` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `article_id` bigint(20) UNSIGNED NOT NULL,
+  `image` varchar(500) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -158,7 +197,9 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (13, '2022_07_14_231243_create_catalogs_table', 7),
 (14, '2022_07_15_065151_create_profiles_table', 8),
 (15, '2022_07_15_074201_create_visions_table', 9),
-(16, '2022_07_15_074210_create_missions_table', 9);
+(16, '2022_07_15_074210_create_missions_table', 9),
+(17, '2022_07_18_130114_create_articles_table', 10),
+(18, '2022_07_18_130201_create_article_images_table', 10);
 
 -- --------------------------------------------------------
 
@@ -428,7 +469,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `fullname`, `username`, `password`, `role`, `created_at`, `updated_at`) VALUES
-(2, 'Muhammad Fattah', 'admin', '$2y$10$KKEGt6TBBcPDY5LQ9DgQuOXpQPwXK3vslwwZaovA7mNiNdSyu8gAO', 'super admin', '2022-07-13 07:49:25', '2022-07-14 20:07:55'),
+(2, 'Admin', 'admin', '$2y$10$KKEGt6TBBcPDY5LQ9DgQuOXpQPwXK3vslwwZaovA7mNiNdSyu8gAO', 'super admin', '2022-07-13 07:49:25', '2022-07-19 03:32:36'),
 (4, 'Muhammad Fattah 2', 'muhammadfattah', '$2y$10$ANT..S0o5OBAlN.dXYjbIOFy7WZFR6Wx.LnQLYUtXs1jHwWG3kn8G', 'admin', '2022-07-14 17:51:34', '2022-07-14 22:31:07');
 
 -- --------------------------------------------------------
@@ -455,6 +496,18 @@ INSERT INTO `visions` (`id`, `vision`, `created_at`, `updated_at`) VALUES
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `articles`
+--
+ALTER TABLE `articles`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `article_images`
+--
+ALTER TABLE `article_images`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `catalogs`
@@ -566,6 +619,18 @@ ALTER TABLE `visions`
 --
 
 --
+-- AUTO_INCREMENT for table `articles`
+--
+ALTER TABLE `articles`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+
+--
+-- AUTO_INCREMENT for table `article_images`
+--
+ALTER TABLE `article_images`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+
+--
 -- AUTO_INCREMENT for table `catalogs`
 --
 ALTER TABLE `catalogs`
@@ -593,7 +658,7 @@ ALTER TABLE `failed_jobs`
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT for table `missions`

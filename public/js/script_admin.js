@@ -89,4 +89,17 @@ $(document).ready(function () {
             nextSibling.innerText = fileName
         })
     }
+
+    $('.summernote').summernote({
+        height: 500,
+        minHeight: 500,
+        toolbar: [
+            ['style', ['style']],
+            ['font', ['bold', 'underline', 'clear']],
+            ['color', ['color']],
+            ['para', ['ul', 'ol', 'paragraph']],
+            ['table', ['table']],
+            ['insert', ['link', 'picture', 'video']],
+        ]
+    });
 });

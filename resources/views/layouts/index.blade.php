@@ -4,8 +4,9 @@ $routes = [
     'Tentang Kami' => 'tentang-kami',
     'Layanan' => 'layanan',
     'Produk' => 'produk',
-    'Porfolio' => 'portfolio',
+    'Portfolio' => 'portfolio',
     'Client' => 'client',
+    'Artikel' => 'artikel',
     'Hubungi Kami' => 'hubungi-kami',
 ];
 @endphp

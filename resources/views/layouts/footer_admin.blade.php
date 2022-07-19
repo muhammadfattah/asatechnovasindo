@@ -38,6 +38,9 @@
  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
  <!-- AdminLTE -->
  <script src="/dist/js/adminlte.js"></script>
+ {{-- Summernote --}}
+ <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.js"></script>
+
  <script src="/js/script_admin.js"></script>
  </body>
 
